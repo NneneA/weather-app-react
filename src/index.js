@@ -9,7 +9,10 @@ import reportWebVitals from './reportWebVitals';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <div className="Container">
+      <h1>Weather Search Engine</h1>
     <Search />
+    </div>
   </React.StrictMode>
 );
 
