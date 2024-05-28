@@ -11,6 +11,16 @@ root.render(
     <div className="Container">
       <h1>Weather Search Engine</h1>
     <Search />
+    <br />
+      <br />
+      <footer>
+        <p>
+          <a href="https://github.com/NneneA/weather-app-react.git">
+            Open-source code
+          </a>{" "}
+          by Nnene Akinremi.
+        </p>
+      </footer>
     </div>
   </React.StrictMode>
 );
