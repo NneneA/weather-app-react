@@ -49,13 +49,13 @@ export default function Search() {
       </form>
       {loaded && (
         <div className="Output">
-          <h2>{cityName}</h2>
-          <p>Temperature: {Math.round(temperature)}°C</p>
-          <p>Description: {description}</p>
-          <p>Humidity: {humidity}%</p>
-          <p>Wind: {wind}km/h</p>
+          <h2>{weatherData.cityName}</h2>
+          <p>Temperature: {Math.round(weatherData.temperature)}°C</p>
+          <p>Description: {weatherData.description}</p>
+          <p>Humidity: {weatherData.humidity}%</p>
+          <p>Wind: {weatherData.wind} km/h</p>
           <p>
-            Icon: <img src={icon} alt={description} />
+            Icon: <img src={weatherData.icon} alt={weatherData.description} />
           </p>
         </div>
       )}
