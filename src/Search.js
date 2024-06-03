@@ -3,27 +3,28 @@ import axios from "axios";
 import "./search.css";
 
 export default function Search() {
-  const [city, setCity] = useState(null);
+  const [city, setCity] = useState("");
   const [loaded, setLoaded] = useState(false);
-  const [temperature, setTemperature] = useState(null);
-  const [description, setDescription] = useState(null);
-  const [humidity, setHumidity] = useState(null);
-  const [wind, setWind] = useState(null);
-  const [icon, setIcon] = useState(null);
-  const [cityName, setCityName] = useState(null);
+  const [weatherData, setWeatherData] = useState({
+    temperature: null,
+    description: null,
+    humidity: null,
+    wind: null,
+    icon: null,
+    cityName: null,
+  });
 
   function showWeather(response) {
+    setWeatherData({
+      temperature: response.data.main.temp,
+      description: response.data.weather[0].description,
+      humidity: response.data.main.humidity,
+      wind: response.data.wind.speed,
+      icon: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      cityName: response.data.name,
+    });
     setLoaded(true);
-    setTemperature(response.data.main.temp);
-    setDescription(response.data.weather[0].description);
-    setHumidity(response.data.main.humidity);
-    setWind(response.data.wind.speed);
-    setIcon(
-      `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-    setCityName(response.data.name);
   }
-
   function handleSubmit(event) {
     event.preventDefault();
 
