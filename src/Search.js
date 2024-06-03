@@ -42,6 +42,7 @@ export default function Search() {
         <input
           type="search"
           placeholder="Type a city.."
+          value={city}
           onChange={updateCity}
         />
         <button type="submit">Search</button>
