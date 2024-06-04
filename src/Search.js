@@ -25,10 +25,12 @@ export default function Search() {
     });
     setLoaded(true);
   }
+
   function handleSubmit(event) {
     event.preventDefault();
 
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=72bb9dab46b9ec3d65f423c63f27a9b8&units=metric;`;
+    let apiKey="25fad9f7e87157d33dde0f82ab269ee8"
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     axios.get(url).then(showWeather);
   }
 
